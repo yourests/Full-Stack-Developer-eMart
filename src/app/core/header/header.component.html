@@ -1,0 +1,19 @@
+<mat-toolbar color="primary" class="rowFix">
+  <nav class="nav">
+    <a href="#" class="nav-link" style="color: white; text-decoration: none;">
+      <mat-icon>home</mat-icon> FSD Emart
+    </a>
+  </nav>
+  <div style="flex: 1"></div>
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <button class="btn btn-outline-primary btn-sm m-2">Sign up</button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-outline-primary btn-sm m-2" [routerLink]="['/login']">Sign in</button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-outline-primary btn-sm m-2">Log out</button>
+    </li>
+  </ul>
+</mat-toolbar>
