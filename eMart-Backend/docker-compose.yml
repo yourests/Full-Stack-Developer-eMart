@@ -1,0 +1,64 @@
+version: '3'
+services:
+  emart:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: emart
+      MYSQL_ROOT_PASSWORD: changeit
+    container_name: emart
+    ports:
+      - "3306:3306"
+    networks:
+      - network
+    volumes:
+      - ./user-db:/var/lib/mysql
+  login-service:
+    image: login-service:v0.1.0
+    build: 
+      context: ./login-service
+    environment:
+      JAVA_OPTS: "-Xms128M -Xmx512M"
+    #container_name: login-service
+    ports:
+      - "8026:8026"
+    networks:
+      - network
+  zuul-gateway:
+    image: zuul-gateway:v0.1.0
+    build: 
+      context: ./zuul-gateway
+    environment:
+      JAVA_OPTS: "-Xms128M -Xmx512M"
+    #container_name: zuul-gateway
+    ports:
+      - "8083:8083"
+    networks:
+      - network
+    depends_on:
+      - registry
+  buyer-item-service:
+    image: buyer-item-service:v0.1.0
+    depends_on:
+      - emart
+    build: 
+      context: ./buyer-item-service
+    environment:
+      JAVA_OPTS: "-Xms128M -Xmx512M"
+    ports:
+      - "8024:8024"
+    networks:
+      - network
+  eureka-discovery-server:
+    image: eureka-discovery-server:v0.1.0
+    depends_on:
+      - emart
+    build: 
+      context: ./eureka-discovery-server
+    environment:
+      JAVA_OPTS: "-Xms128M -Xmx512M"
+    networks:
+      - network
+networks:
+  network:
+
