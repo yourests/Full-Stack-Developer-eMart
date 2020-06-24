@@ -1,27 +1,39 @@
-# FullStackDeveloperEMart
+# Associate name
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
+cdyujun@cn.ibm.com
 
-## Development server
+## Preview.docx
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Perview.docx: milestone 2
 
-## Code scaffolding
+# Full-Stack-Developer-eMart
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Electronic mall based on angular frontend and spingboot backend.
 
-## Build
+## Frontend Project: (related milestone2, 4, 5)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Frontend project store under eMart-Frontend folder.
 
-## Running unit tests
+## Backend Project: (related milestone3, 5)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Backend project store under eMart-Backend folder.
 
-## Running end-to-end tests
+## Buyer Item Service
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Bill and Item service
 
-## Further help
+Port: 8024
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Eureka Discovery Server
+
+Port: 8761
+
+## Login Service
+
+Service about login for buyers and sellers
+
+Port: 8026
+
+## Zuul Gateway Server
+
+Port: 8083
